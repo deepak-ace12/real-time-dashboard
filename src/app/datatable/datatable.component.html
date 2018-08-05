@@ -1,0 +1,60 @@
+
+<!-- <mat-card class="container"> -->
+<!-- <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field> -->
+<div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+<div class="mat-elevation-z8 container">
+  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let row">{{row.date | date:'yyyy-MM-dd'}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="high">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>High</th>
+      <td mat-cell *matCellDef="let row">{{row.high}}</td>
+    </ng-container>
+
+     <!-- Id Column -->
+     <ng-container matColumnDef="low">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Low</th>
+      <td mat-cell *matCellDef="let row">{{row.low}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="start">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Start</th>
+      <td mat-cell *matCellDef="let row">{{row.start}}</td>
+    </ng-container>
+
+     <!-- Id Column -->
+     <ng-container matColumnDef="end">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>End</th>
+      <td mat-cell *matCellDef="let row">{{row.end}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="volume">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Volume</th>
+      <td mat-cell *matCellDef="let row">{{row.volume}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+    [length]="10"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 100, 250]">
+  </mat-paginator>
+</div>
+
+<!-- </mat-card> -->

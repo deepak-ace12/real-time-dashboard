@@ -1,0 +1,56 @@
+<ng-container>
+
+  <mat-toolbar color="primary" class="example-header">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+
+    <span>{{'realtime dashboard' | titlecase}}</span>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+      <!-- <mat-toolbar color="accent">
+        <mat-toolbar-row>
+          <span>Custom Toolbar</span>
+        </mat-toolbar-row>
+  
+        <mat-toolbar-row>
+          <span>Second Line</span>
+          <span class="example-spacer"></span>
+          <mat-icon class="example-icon">verified_user</mat-icon>
+        </mat-toolbar-row>
+  
+        <mat-toolbar-row>
+          <span>Third Line</span>
+          <span class="example-spacer"></span>
+          <mat-icon class="example-icon">favorite</mat-icon>
+          <mat-icon class="example-icon">delete</mat-icon>
+        </mat-toolbar-row>
+      </mat-toolbar> -->
+      <mat-nav-list *ngFor="let nav of fillerNav">
+        <!-- <a mat-list-item routerLink="dashboard">Dashboard</a>
+        <a mat-list-item routerLink="datatable">Data-table</a> -->
+        <a mat-list-item  [routerLink]="nav.path">{{nav.title}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+  
+        <span>realtime-dashboard</span>
+      </mat-toolbar> -->
+      <router-outlet></router-outlet>
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- <mat-toolbar color="primary"  class="example-footer">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+
+    <span>realtime-dashboard</span>
+  </mat-toolbar> -->
+</ng-container>

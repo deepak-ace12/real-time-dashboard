@@ -1,0 +1,75 @@
+/* .sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.con{
+  overflow: auto;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:64px;
+} */
+
+
+.example-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 60px;
+  /* bottom: 60px; */
+  bottom: 2px;
+  left: 0;
+  right: 0;
+}
+
+.sidenav {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: rgba(188, 188, 212, 0.815);
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.example-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
